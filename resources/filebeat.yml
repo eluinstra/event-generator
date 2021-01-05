@@ -1,0 +1,10 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - "ebms-admin.log"
+  include_lines: ['received', 'delivered','failed','expired','Created','created','Sending','sent','processed','ERROR']
+#  exclude_lines: ['']
+# output.console:
+#   pretty: true
+output.logstash:
+  hosts: ["localhost:5044"]
